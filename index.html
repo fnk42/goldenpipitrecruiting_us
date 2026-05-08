@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Golden Pipit Recruiting — Retained Executive Search</title>
+<meta name="description" content="Retained executive search for senior roles in finance, consulting, and growth-stage operations. Custom client portal on every engagement." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0F1C2E;
+    --navy-2: #1a2a42;
+    --navy-3: #243551;
+    --gold: #F5A623;
+    --champagne: #C8A552;
+    --bone: #faf8f3;
+    --paper: #ffffff;
+    --ink: #0F1C2E;
+    --ink-2: #2a3a52;
+    --muted: #5b6677;
+    --muted-2: #8b95a4;
+    --line: #e6e2d8;
+    --line-2: #eee9dd;
+    --line-dark: rgba(255,255,255,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+  }
+
+  .serif { font-family: 'Cormorant Garamond', 'Times New Roman', serif; font-weight: 500; letter-spacing: -0.01em; }
+
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  section { scroll-margin-top: 92px; }
+
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .container-narrow {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: sticky;
+    top: 0;
+    height: 76px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    border-bottom: 1px solid var(--line);
+    z-index: 100;
+    box-shadow: 0 1px 0 rgba(15, 28, 46, 0.02);
+  }
+  .nav-inner {
+    height: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--navy);
+  }
+  .logo-mark {
+    height: 52px;
+    width: 52px;
+    border-radius: 4px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 19px;
+    color: var(--navy);
+    letter-spacing: 0.005em;
+    line-height: 1.05;
+  }
+  .logo-text small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-2);
+    transition: color 0.15s ease;
+  }
+  .nav-links a:hover { color: var(--navy); }
+  .nav-cta {
+    background: var(--navy);
+    color: #fff !important;
+    padding: 10px 18px;
+    border-radius: 4px;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    transition: background 0.15s ease;
+  }
+  .nav-cta:hover { background: var(--navy-2); }
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  /* ===== BUTTONS ===== */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 12px 22px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.005em;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.15s ease;
+    font-family: inherit;
+  }
+  .btn-primary {
+    background: var(--navy);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--navy-2); transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--navy);
+    border-color: var(--navy);
+  }
+  .btn-secondary:hover { background: var(--navy); color: #fff; }
+  .btn-ghost {
+    background: transparent;
+    color: var(--navy);
+    border-color: var(--line);
+  }
+  .btn-ghost:hover { border-color: var(--navy); }
+  .btn-light {
+    background: #fff;
+    color: var(--navy);
+  }
+  .btn-light:hover { background: var(--bone); }
+  .btn-arrow svg {
+    transition: transform 0.2s ease;
+  }
+  .btn:hover .btn-arrow svg { transform: translateX(3px); }
+
+  /* ===== EYEBROWS / HEADINGS ===== */
+  .eyebrow {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: var(--champagne);
+  }
+  .eyebrow-light { color: var(--gold); }
+  .eyebrow-light::before { background: var(--gold); }
+
+  .h-display {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(36px, 5.4vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--navy);
+  }
+  .h-section {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(30px, 3.6vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+  }
+  .h-card {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--navy);
+    letter-spacing: -0.005em;
+  }
+  .lede {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    max-width: 640px;
+  }
+  p { color: var(--ink-2); }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 84px 0 96px;
+    background:
+      radial-gradient(60% 80% at 75% 20%, rgba(245, 166, 35, 0.06) 0%, transparent 60%),
+      radial-gradient(70% 60% at 15% 90%, rgba(200, 165, 82, 0.04) 0%, transparent 60%),
+      var(--bone);
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--line-2) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-2) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.35;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+  }
+  .hero h1 { margin: 18px 0 22px; max-width: 920px; }
+  .hero .lede { margin-bottom: 36px; max-width: 680px; }
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+  .hero-meta {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .hero-meta strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  /* ===== GENERIC SECTIONS ===== */
+  .section { padding: 96px 0; }
+  .section-tight { padding: 72px 0; }
+  .section-bone { background: var(--bone); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .section-navy {
+    background: var(--navy);
+    color: #fff;
+    border-top: 1px solid var(--navy-2);
+    border-bottom: 1px solid var(--navy-2);
+  }
+  .section-navy .h-display, .section-navy .h-section, .section-navy .h-card { color: #fff; }
+  .section-navy p, .section-navy .lede { color: rgba(255,255,255,0.78); }
+
+  .section-head { margin-bottom: 56px; max-width: 760px; }
+  .section-head h2 { margin: 16px 0 18px; }
+  .section-head p { font-size: 17px; line-height: 1.6; color: var(--muted); }
+  .section-navy .section-head p { color: rgba(255,255,255,0.72); }
+
+  /* ===== TRACK RECORD ===== */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .stat {
+    padding: 36px 28px;
+    border-right: 1px solid var(--line);
+    position: relative;
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(40px, 4.4vw, 56px);
+    line-height: 1;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .stat-num em {
+    font-style: normal;
+    color: var(--champagne);
+  }
+  .stat-label {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .track-tagline {
+    margin-top: 36px;
+    max-width: 760px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  /* ===== SECTORS ===== */
+  .sectors {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .sector {
+    padding: 36px 24px;
+    border-right: 1px solid var(--line);
+    transition: background 0.2s ease;
+  }
+  .sector:last-child { border-right: none; }
+  .sector:hover { background: var(--bone); }
+  .sector-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--champagne);
+    margin-bottom: 22px;
+  }
+  .sector-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 19px;
+    color: var(--navy);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .sector-desc {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+  .sector-footer {
+    margin-top: 28px;
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+    text-align: center;
+  }
+
+  /* ===== FEATURED TESTIMONIAL ===== */
+  .featured-quote {
+    background: var(--navy);
+    color: #fff;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .featured-quote::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(60% 80% at 80% 30%, rgba(245, 166, 35, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .featured-inner {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 64px;
+    align-items: center;
+    position: relative;
+  }
+  .featured-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 96px;
+    line-height: 0.5;
+    color: var(--gold);
+    margin-bottom: 8px;
+    height: 36px;
+    overflow: visible;
+  }
+  .featured-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(24px, 2.8vw, 34px);
+    line-height: 1.35;
+    color: #fff;
+    letter-spacing: -0.005em;
+    margin: 16px 0 32px;
+  }
+  .featured-attr {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line-dark);
+  }
+  .avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--gold), var(--champagne));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+  }
+  .avatar img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+  }
+  .avatar::before {
+    content: attr(data-initials);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy);
+    z-index: 1;
+  }
+  .avatar-lg {
+    width: 72px;
+    height: 72px;
+    font-size: 22px;
+  }
+  .featured-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+  .featured-role {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+  }
+  .featured-photo {
+    aspect-ratio: 4 / 5;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, var(--navy-2), var(--navy-3));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line-dark);
+  }
+  .featured-photo::before {
+    content: attr(data-initials);
+    position: absolute;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 96px;
+    color: var(--gold);
+    z-index: 1;
+    opacity: 0.4;
+  }
+  .featured-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ===== HOW WE WORK ===== */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .pillar {
+    padding: 48px 32px 16px 0;
+    border-right: 1px solid var(--line);
+  }
+  .pillar:last-child { border-right: none; padding-right: 0; }
+  .pillar:not(:first-child) { padding-left: 32px; }
+  .pillar-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--champagne);
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pillar-num::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+  .pillar h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 28px;
+    color: var(--navy);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .pillar p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  /* ===== PORTAL ===== */
+  .portal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 72px;
+    align-items: center;
+  }
+  .portal-text h2 { margin: 16px 0 24px; }
+  .portal-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.78);
+    margin-bottom: 18px;
+  }
+  .portal-mock {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 12px 24px rgba(0,0,0,0.2);
+    border: 1px solid var(--line-dark);
+  }
+  .browser-bar {
+    background: linear-gradient(180deg, #f3eee2, #ece6d6);
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .browser-dots { display: flex; gap: 6px; }
+  .browser-dots span {
+    width: 12px; height: 12px; border-radius: 50%;
+    background: rgba(0,0,0,0.12);
+  }
+  .browser-dots span:nth-child(1) { background: #ff5f57; }
+  .browser-dots span:nth-child(2) { background: #febc2e; }
+  .browser-dots span:nth-child(3) { background: #28c840; }
+  .browser-url {
+    flex: 1;
+    background: rgba(255,255,255,0.7);
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--muted);
+    border: 1px solid rgba(0,0,0,0.06);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .browser-url svg { width: 11px; height: 11px; color: #28a745; flex-shrink: 0; }
+  .portal-body { padding: 28px; color: var(--ink); }
+  .portal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 22px;
+  }
+  .portal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 19px;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .portal-sub { font-size: 12px; color: var(--muted); }
+  .portal-pill {
+    background: rgba(40, 167, 69, 0.1);
+    color: #1e7e34;
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .portal-stages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .portal-stage {
+    background: var(--bone);
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+  }
+  .portal-stage-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .portal-stage-label {
+    font-size: 10.5px;
+    color: var(--muted);
+    margin-top: 4px;
+    letter-spacing: 0.02em;
+  }
+  .portal-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line-2);
+    font-size: 13px;
+  }
+  .portal-row:last-child { border-bottom: none; }
+  .portal-row .name { font-weight: 600; color: var(--ink); }
+  .portal-row .role { color: var(--muted); font-size: 11.5px; margin-top: 2px; }
+  .portal-row .stage {
+    font-size: 11px;
+    background: rgba(245, 166, 35, 0.12);
+    color: #b27410;
+    padding: 3px 8px;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+  .portal-row .stage-final { background: rgba(40, 167, 69, 0.12); color: #1e7e34; }
+
+  /* ===== FEATURED QUOTE — LIGHT VARIANT ===== */
+  .featured-quote-light {
+    background: var(--bone);
+    color: var(--ink);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .featured-quote-light::before { display: none; }
+  .featured-quote-light .featured-inner { grid-template-columns: 320px 1fr; gap: 64px; }
+  .featured-quote-light .featured-text { color: var(--navy); font-size: clamp(22px, 2.4vw, 30px); }
+  .featured-quote-light .featured-mark { color: var(--champagne); }
+  .featured-quote-light .featured-name { color: var(--navy); }
+  .featured-quote-light .featured-role { color: var(--muted); }
+  .featured-quote-light .featured-attr { border-top-color: var(--line); }
+  .featured-quote-light .featured-photo {
+    background: linear-gradient(135deg, #f0e9d8, #ddd2b8);
+    border-color: var(--line);
+  }
+  .featured-quote-light .featured-photo::before { color: var(--champagne); opacity: 0.5; }
+  .featured-quote-light .eyebrow { color: var(--champagne); }
+  .featured-quote-light .eyebrow::before { background: var(--champagne); }
+  @media (max-width: 980px) {
+    .featured-quote-light .featured-inner { grid-template-columns: 1fr; }
+  }
+
+  /* ===== TESTIMONIAL CARDS ===== */
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .testimonial {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .testimonial:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(15, 28, 46, 0.06);
+  }
+  .testimonial-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    line-height: 0.4;
+    color: var(--champagne);
+    margin-bottom: 4px;
+    height: 22px;
+  }
+  .testimonial-text {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    flex: 1;
+    margin: 12px 0 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.005em;
+  }
+  .testimonial-attr {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .testimonial-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--navy);
+    margin-bottom: 2px;
+  }
+  .testimonial-role {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .testimonial-placeholder {
+    background: var(--bone);
+    border-style: dashed;
+    border-color: var(--champagne);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--muted);
+  }
+  .testimonial-placeholder .testimonial-text {
+    color: var(--muted);
+    font-style: italic;
+    margin: 24px 0;
+  }
+  .testimonial-placeholder svg {
+    width: 32px; height: 32px;
+    color: var(--champagne);
+    margin: 0 auto 8px;
+  }
+  .testimonials-footer {
+    margin-top: 32px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ===== ENGAGEMENTS ===== */
+  .engagements {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .engagement {
+    padding: 40px 32px;
+    border-right: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .engagement:last-child { border-right: none; }
+  .engagement-flag {
+    position: absolute;
+    top: 0;
+    left: 32px;
+    background: var(--champagne);
+    color: var(--navy);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 0 0 3px 3px;
+  }
+  .engagement-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--champagne);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+  .engagement h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--navy);
+    margin-bottom: 14px;
+    letter-spacing: -0.005em;
+  }
+  .engagement p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--muted);
+    flex: 1;
+  }
+
+  /* ===== US CLIENTS ===== */
+  .us-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .us-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .us-list li {
+    display: flex;
+    gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .us-list li:last-child { border-bottom: none; }
+  .us-icon {
+    width: 22px;
+    height: 22px;
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .us-list strong {
+    display: block;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 15px;
+  }
+  .us-list span {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.55;
+  }
+
+  /* ===== ABOUT ===== */
+  .about-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .about-photo {
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--bone), #f0e9d8);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-photo::before {
+    content: attr(data-initials);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    color: var(--champagne);
+    opacity: 0.4;
+  }
+  .about-photo img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .about-body p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-2);
+    margin-bottom: 18px;
+  }
+  .philosophy {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .philosophy-item {
+    padding: 40px 28px 8px 0;
+    border-right: 1px solid var(--line);
+  }
+  .philosophy-item:last-child { border-right: none; padding-right: 0; }
+  .philosophy-item:not(:first-child) { padding-left: 28px; }
+  .philosophy-item h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 12px;
+    letter-spacing: -0.005em;
+  }
+  .philosophy-item p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  /* ===== WHAT WE DO ===== */
+  .scope {
+    margin-top: 80px;
+    background: var(--bone);
+    border-radius: 4px;
+    border: 1px solid var(--line);
+    padding: 48px;
+  }
+  .scope h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 28px;
+    color: var(--navy);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .scope p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-2);
+    max-width: 720px;
+  }
+
+  /* ===== FINAL CTA ===== */
+  .cta-final {
+    text-align: center;
+    padding: 100px 0;
+  }
+  .cta-final .h-display { margin-bottom: 24px; }
+  .cta-final .lede { margin: 0 auto 36px; }
+  .cta-final-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    padding: 56px 0 32px;
+  }
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .foot-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .foot-brand .logo-mark { background: rgba(255,255,255,0.06); }
+  .foot-brand-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 19px;
+    color: #fff;
+  }
+  .foot-tag {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.55);
+    max-width: 360px;
+  }
+  .foot-col h5 {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .foot-col ul { list-style: none; padding: 0; margin: 0; }
+  .foot-col li { margin-bottom: 10px; font-size: 14px; }
+  .foot-col a { color: rgba(255,255,255,0.65); transition: color 0.15s ease; }
+  .foot-col a:hover { color: var(--gold); }
+  .foot-bottom {
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 980px) {
+    .featured-inner { grid-template-columns: 1fr; gap: 48px; }
+    .featured-photo { max-width: 280px; }
+    .portal-grid { grid-template-columns: 1fr; gap: 48px; }
+    .about-intro { grid-template-columns: 1fr; gap: 48px; }
+    .about-photo { max-width: 360px; }
+    .us-grid { grid-template-columns: 1fr; gap: 32px; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: none; }
+    .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--line); }
+    .sectors { grid-template-columns: repeat(2, 1fr); }
+    .sector:nth-child(odd) { border-right: 1px solid var(--line); }
+    .sector:nth-child(even) { border-right: none; }
+    .sector { border-bottom: 1px solid var(--line); }
+    .sector:nth-last-child(-n+1) { border-bottom: none; }
+    .pillars, .philosophy { grid-template-columns: 1fr; }
+    .pillar, .philosophy-item {
+      border-right: none;
+      border-bottom: 1px solid var(--line);
+      padding: 32px 0;
+    }
+    .pillar:not(:first-child), .philosophy-item:not(:first-child) { padding-left: 0; }
+    .pillar:last-child, .philosophy-item:last-child { border-bottom: none; }
+    .testimonials { grid-template-columns: 1fr; }
+    .engagements { grid-template-columns: 1fr; }
+    .engagement { border-right: none; border-bottom: 1px solid var(--line); }
+    .engagement:last-child { border-bottom: none; }
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+
+  @media (max-width: 768px) {
+    section { scroll-margin-top: 84px; }
+    .container, .container-narrow, .nav-inner { padding: 0 22px; }
+    .nav-links { display: none; position: absolute; top: 76px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 22px; gap: 16px; border-bottom: 1px solid var(--line); align-items: stretch; }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 8px 0; }
+    .nav-toggle { display: inline-flex; }
+    .hero { padding: 56px 0 72px; }
+    .hero-meta { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .section { padding: 64px 0; }
+    .section-tight { padding: 48px 0; }
+    .featured-quote { padding: 56px 0; }
+    .scope { padding: 32px 24px; }
+    .foot-grid { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  @media (max-width: 520px) {
+    .stats { grid-template-columns: 1fr; }
+    .stat { border-right: none; border-bottom: 1px solid var(--line); }
+    .stat:last-child { border-bottom: none; }
+    .sectors { grid-template-columns: 1fr; }
+    .sector { border-right: none; border-bottom: 1px solid var(--line); }
+    .sector:last-child { border-bottom: none; }
+    .portal-stages { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo" aria-label="Golden Pipit Recruiting home">
+      <div class="logo-mark">G</div>
+      <div class="logo-text">
+        Golden Pipit
+        <small>Recruiting</small>
+      </div>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#track-record">Track record</a>
+      <a href="#how">How we work</a>
+      <a href="#what-we-do">What we do</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Book a discovery call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div style="margin-bottom: 24px;">
+      <span class="serif" style="font-size: clamp(28px, 3.4vw, 38px); font-weight: 500; color: var(--champagne); letter-spacing: -0.01em; line-height: 1;">Everything People<span style="color: var(--gold);">.</span></span>
+    </div>
+    <span class="eyebrow">Retained executive search</span>
+    <h1 class="h-display">Senior placements, delivered with the rigor the work demands.</h1>
+    <p class="lede">We run retained search for senior roles in finance, consulting, and growth-stage operations that other firms struggle to close. Custom client portal on every engagement. References from current and past clients available on request.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary btn-arrow">Book a discovery call <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <a href="#track-record" class="btn btn-ghost">See our work</a>
+    </div>
+
+    <div class="hero-meta">
+      <div><strong>$100M+</strong>Aggregate placement value</div>
+      <div><strong>14</strong>Markets covered</div>
+      <div><strong>4 wks</strong>Average to shortlist</div>
+      <div><strong>90%+</strong>Repeat client rate</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRACK RECORD ===== -->
+<section class="section" id="track-record">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Track record</span>
+      <h2 class="h-section">Nine-figure value of senior placements delivered.</h2>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num"><em>$100M+</em></div>
+        <div class="stat-label">Aggregate placement value across our engagement history</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">14</div>
+        <div class="stat-label">Markets covered with in-region sourcing capability</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">4 <span style="font-size:0.5em; color:var(--muted)">weeks</span></div>
+        <div class="stat-label">Average time to qualified shortlist</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">90<span style="font-size:0.5em">%+</span></div>
+        <div class="stat-label">Clients who return for a second engagement</div>
+      </div>
+    </div>
+
+    <p class="track-tagline">Our work is most of our marketing. The list below names sectors where we currently have active engagements — and a partial list of the firms whose senior hires have come through us. References on request.</p>
+  </div>
+</section>
+
+<!-- ===== SECTORS ===== -->
+<section class="section section-bone">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Where we work</span>
+      <h2 class="h-section">Trusted by firms hiring at the senior tier.</h2>
+    </div>
+
+    <div class="sectors">
+      <div class="sector">
+        <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg>
+        <div class="sector-name">Management Consulting</div>
+        <div class="sector-desc">Senior placements at top-tier and boutique strategy firms</div>
+      </div>
+      <div class="sector">
+        <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18M7 14l4-4 4 4 5-5"/></svg>
+        <div class="sector-name">Asset Management</div>
+        <div class="sector-desc">IR, deal, and operating roles at PE, VC, and private credit firms</div>
+      </div>
+      <div class="sector">
+        <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12h4l3-9 6 18 3-9h4"/></svg>
+        <div class="sector-name">Growth-Stage SaaS</div>
+        <div class="sector-desc">VP and C-suite hires at Series B–D companies scaling rapidly</div>
+      </div>
+      <div class="sector">
+        <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+        <div class="sector-name">PE-Backed Platforms</div>
+        <div class="sector-desc">Functional leaders for portfolio companies post-investment</div>
+      </div>
+      <div class="sector">
+        <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2M16 11h6M19 8v6"/></svg>
+        <div class="sector-name">Independent Consulting Networks</div>
+        <div class="sector-desc">Senior consultants and lead partners for global on-demand networks</div>
+      </div>
+    </div>
+
+    <p class="sector-footer">References available from past and current clients in each of these categories.</p>
+  </div>
+</section>
+
+<!-- ===== FEATURED TESTIMONIAL ===== -->
+<section class="featured-quote">
+  <div class="container">
+    <div class="featured-inner">
+      <div>
+        <span class="eyebrow eyebrow-light">Featured client</span>
+        <div class="featured-mark">“</div>
+        <p class="featured-text">Felix was instrumental in helping one of our portfolio companies break into the East African market, identifying key talent hubs and leveraging digital platforms. I highly recommend him.</p>
+        <div class="featured-attr">
+          <div class="avatar avatar-lg" data-initials="IK">
+            <img src="images/ian.jpg" alt="" onerror="this.style.display='none'" />
+          </div>
+          <div>
+            <div class="featured-name">Ian Krohn</div>
+            <div class="featured-role">Partner · ThirdWay Partners</div>
+          </div>
+        </div>
+      </div>
+      <div class="featured-photo" data-initials="IK">
+        <img src="images/ian.jpg" alt="Ian Krohn" onerror="this.style.display='none'" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW WE WORK ===== -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">How we work</span>
+      <h2 class="h-section">The hardest searches, run with the most leverage.</h2>
+      <p>Senior search done well requires three things — reach, depth, and trust. We've rebuilt how each is delivered.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01 — Reach</div>
+        <h3>Global sourcing infrastructure.</h3>
+        <p>Our team operates with the most advanced AI-augmented sourcing infrastructure available — every recruiter equipped with a Claude Max licence as standard issue, alongside LinkedIn Recruiter and a proprietary candidate database 10,000+ vetted senior profiles deep. We can identify, evaluate, and reach senior candidates in any market on the planet, including the ones most firms avoid because they lack the language, network, or context.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02 — Depth</div>
+        <h3>Vetted, not just sourced.</h3>
+        <p>Every shortlisted candidate has been interviewed by a senior recruiter on our team, scored against your specific brief, and tested against any technical or scenario-based assessments your role requires. You meet candidates we have already vetted — not just sourced. Most retained shortlists are recycled databases. Ours are built fresh, against your brief, every time.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03 — Trust</div>
+        <h3>A working record that lasts.</h3>
+        <p>Every engagement runs through its own custom-built, password-protected portal. It becomes the single source of truth for the search — replacing the email attachments and shared drives most firms rely on. You always know where the engagement stands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PORTAL ===== -->
+<section class="section section-navy" id="portal">
+  <div class="container">
+    <div class="portal-grid">
+      <div class="portal-text">
+        <span class="eyebrow eyebrow-light">A different kind of delivery experience</span>
+        <h2 class="h-section">Every engagement comes with its own private portal.</h2>
+        <p>Most retained searches are delivered through a series of email attachments and shared drives. Ours come with a custom-built, password-protected portal — your own private dashboard for the engagement.</p>
+        <p>The portal becomes the working record of the search: candidates evaluated, shortlist progression, qualification notes, decisions made. When the engagement closes, the portal stays.</p>
+        <p>You can refer back to it months later — to audit the search, to share it with your board, or to plan future hires. Most firms ship a PDF. We ship infrastructure that lasts.</p>
+      </div>
+      <div class="portal-mock" aria-hidden="true">
+        <div class="browser-bar">
+          <div class="browser-dots"><span></span><span></span><span></span></div>
+          <div class="browser-url">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            client.goldenpipitrecruiting.com/engagement-014
+          </div>
+        </div>
+        <div class="portal-body">
+          <div class="portal-header">
+            <div>
+              <div class="portal-title">VP Investor Relations</div>
+              <div class="portal-sub">Confidential search · Engagement #GPR-2026-014</div>
+            </div>
+            <div class="portal-pill">Active</div>
+          </div>
+          <div class="portal-stages">
+            <div class="portal-stage">
+              <div class="portal-stage-num">91</div>
+              <div class="portal-stage-label">Sourced</div>
+            </div>
+            <div class="portal-stage">
+              <div class="portal-stage-num">28</div>
+              <div class="portal-stage-label">Screened</div>
+            </div>
+            <div class="portal-stage">
+              <div class="portal-stage-num">7</div>
+              <div class="portal-stage-label">Shortlist</div>
+            </div>
+            <div class="portal-stage">
+              <div class="portal-stage-num">3</div>
+              <div class="portal-stage-label">Final round</div>
+            </div>
+          </div>
+          <div class="portal-row">
+            <div>
+              <div class="name">M. Alvarez</div>
+              <div class="role">Sr. IR Director · Tampa, FL</div>
+            </div>
+            <div class="stage stage-final">Final</div>
+          </div>
+          <div class="portal-row">
+            <div>
+              <div class="name">D. Whitfield</div>
+              <div class="role">Head of IR · Miami, FL</div>
+            </div>
+            <div class="stage stage-final">Final</div>
+          </div>
+          <div class="portal-row">
+            <div>
+              <div class="name">J. Park</div>
+              <div class="role">VP IR · Boca Raton, FL</div>
+            </div>
+            <div class="stage">Shortlist</div>
+          </div>
+          <div class="portal-row">
+            <div>
+              <div class="name">S. Reinhardt</div>
+              <div class="role">Director, Capital Formation</div>
+            </div>
+            <div class="stage">Shortlist</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECONDARY TESTIMONIALS ===== -->
+<section class="section section-bone">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What clients say</span>
+      <h2 class="h-section">Senior hiring leads who came back.</h2>
+    </div>
+
+    <div class="testimonials">
+      <div class="testimonial">
+        <div class="testimonial-mark">“</div>
+        <p class="testimonial-text">The quality of candidates GP Recruiting surfaces is consistently above what we find through any other channel. They understand the calibre of person we need.</p>
+        <div class="testimonial-attr">
+          <div class="avatar" data-initials="NP">
+            <img src="images/norbert.jpg" alt="" onerror="this.style.display='none'" />
+          </div>
+          <div>
+            <div class="testimonial-name">Norbert Pap</div>
+            <div class="testimonial-role">CEO · Gratia</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="testimonial-mark">“</div>
+        <p class="testimonial-text">Fast, thorough, and genuinely invested in the outcome. GPR doesn't just fill roles — they find people who fit.</p>
+        <div class="testimonial-attr">
+          <div class="avatar" data-initials="BK">
+            <img src="images/brandon.jpg" alt="" onerror="this.style.display='none'" />
+          </div>
+          <div>
+            <div class="testimonial-name">Brandon Kronitz</div>
+            <div class="testimonial-role">Co-founder · Arcwise</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial testimonial-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        <p class="testimonial-text">US-headquartered client testimonial — slot reserved, copy to be added before launch.</p>
+        <div class="testimonial-attr" style="border-color: rgba(200,165,82,0.3);">
+          <div class="avatar" data-initials="—" style="background: var(--line);"></div>
+          <div>
+            <div class="testimonial-name" style="color: var(--muted)">Pending</div>
+            <div class="testimonial-role">United States</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="testimonials-footer">References from current clients available on request.</p>
+  </div>
+</section>
+
+<!-- ===== FEATURED TESTIMONIAL 02 — JACKIE ===== -->
+<section class="featured-quote featured-quote-light">
+  <div class="container">
+    <div class="featured-inner">
+      <div class="featured-photo" data-initials="JK">
+        <img src="images/jackie.jpg" alt="Jackie" onerror="this.style.display='none'" />
+      </div>
+      <div>
+        <span class="eyebrow">Featured client · 02</span>
+        <div class="featured-mark">"</div>
+        <p class="featured-text">[DRAFT — replace with Jackie's quote.] Golden Pipit didn't function like a vendor. They functioned like an extension of our team — candid on the candidates who weren't right, rigorous on the ones who were, and willing to push back when our brief needed sharpening. That's rare.</p>
+        <div class="featured-attr">
+          <div class="avatar avatar-lg" data-initials="JK">
+            <img src="images/jackie.jpg" alt="" onerror="this.style.display='none'" />
+          </div>
+          <div>
+            <div class="featured-name">Jackie</div>
+            <div class="featured-role">Founder · Gratia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENGAGEMENT STRUCTURE / WHAT WE DO ===== -->
+<section class="section" id="what-we-do">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">How to work with us</span>
+      <h2 class="h-section">Three ways to engage.</h2>
+    </div>
+
+    <div class="engagements">
+      <div class="engagement">
+        <div class="engagement-flag">Flagship</div>
+        <div class="engagement-num" style="margin-top:18px">01</div>
+        <h3>Retained Executive Search</h3>
+        <p>Our flagship. A retained engagement to identify, assess, and close a senior placement. Custom client portal, qualified shortlist, reference checks, replacement guarantee. For roles where the right hire changes the trajectory.</p>
+      </div>
+      <div class="engagement">
+        <div class="engagement-num">02</div>
+        <h3>Embedded Talent Partner</h3>
+        <p>A monthly engagement for clients hiring 3+ senior roles in parallel. A dedicated recruiter assigned to your account, working through your ATS and brand. We function as an extension of your team.</p>
+      </div>
+      <div class="engagement">
+        <div class="engagement-num">03</div>
+        <h3>Project-Based Sourcing</h3>
+        <p>When you need a verified senior longlist, not a full retained search. We deliver qualified, contactable senior candidates with full contact information and qualification notes, on a fixed timeline.</p>
+      </div>
+    </div>
+
+    <div class="scope">
+      <span class="eyebrow">How engagements are scoped</span>
+      <h3 style="margin-top:14px">From discovery call to live search in under a week.</h3>
+      <p>Every engagement begins with a 30-minute discovery call. If we are aligned, we send a brief and a contract within 48 hours. Once signed, we begin work that week — typically with a kick-off call to align on the search brief, the candidate profile, and the assessment criteria. From there, you have access to your portal and live visibility into the search.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== US CLIENTS ===== -->
+<section class="section section-navy" id="us-clients">
+  <div class="container">
+    <div class="us-grid">
+      <div>
+        <span class="eyebrow eyebrow-light">For US-based clients</span>
+        <h2 class="h-section" style="margin-top:16px">We work with US firms by default.</h2>
+        <p style="font-size:17px; color: rgba(255,255,255,0.78); margin-top: 20px;">A majority of our active engagements run with US-headquartered firms. The practical implications:</p>
+      </div>
+      <ul class="us-list">
+        <li>
+          <svg class="us-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          <div><strong>Delaware-incorporated LLC</strong><span>Standard MSA and contracting flow, easy procurement</span></div>
+        </li>
+        <li>
+          <svg class="us-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          <div><strong>USD invoicing</strong><span>No FX exposure for you</span></div>
+        </li>
+        <li>
+          <svg class="us-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          <div><strong>US time-zone availability</strong><span>Daily standups in ET, CT, or PT</span></div>
+        </li>
+        <li>
+          <svg class="us-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          <div><strong>Existing US reference network</strong><span>References on request from firms across management consulting, asset management, and growth-stage operations</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">About</span>
+      <h2 class="h-display" style="margin-top:14px">Built by recruiters. Built for the work.</h2>
+    </div>
+
+    <div class="about-intro">
+      <div class="about-photo" data-initials="FK">
+        <img src="images/felix.jpg" alt="Felix Njenga Koimburi" onerror="this.style.display='none'" />
+      </div>
+      <div class="about-body">
+        <p>Felix Njenga Koimburi didn't come up through recruiting. He spent a decade with the Navigators across Africa — leading development work, building programmes, raising leaders, sitting in rooms most retained firms don't have a contact in.</p>
+        <p>That decade turned out to be the right preparation. Senior talent today is global, mobile, and harder to read than it looks. The firms that find it first aren't the ones with the biggest databases — they're the ones who learned the long way how people actually decide.</p>
+        <p>He founded Golden Pipit to do retained search the way that experience taught him to: patient on intent, exacting on execution, and built for the markets the rest of the industry treats as too hard.</p>
+        <p>The team is based in Nairobi. The entity is registered in Delaware. Clients are global — predominantly American — and the firm runs senior searches into operations across three continents.</p>
+      </div>
+    </div>
+
+    <div class="philosophy">
+      <div class="philosophy-item">
+        <span class="eyebrow" style="margin-bottom:14px; display:flex;">Philosophy 01</span>
+        <h4>We don't shortlist what you've already seen.</h4>
+        <p>Most retained shortlists are recycled databases. Ours are built fresh, against your specific brief, every time. If a candidate has been pitched into your firm before by another agency, we'll tell you — and we'll keep going until we find someone you haven't seen.</p>
+      </div>
+      <div class="philosophy-item">
+        <span class="eyebrow" style="margin-bottom:14px; display:flex;">Philosophy 02</span>
+        <h4>We assess before we present.</h4>
+        <p>Every shortlist candidate has been interviewed by a senior recruiter on our team, scored against the brief, and tested against any technical or scenario-based assessments your role requires. You meet candidates we've already vetted — not just sourced.</p>
+      </div>
+      <div class="philosophy-item">
+        <span class="eyebrow" style="margin-bottom:14px; display:flex;">Philosophy 03</span>
+        <h4>We close fast or we close honestly.</h4>
+        <p>If a search isn't going to deliver the right candidate in a reasonable timeline, we'll tell you that within the first month rather than billing you for activity. Our reputation is more valuable to us than any individual engagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="section section-bone" id="contact">
+  <div class="container-narrow cta-final">
+    <span class="eyebrow">Get in touch</span>
+    <h2 class="h-display" style="margin-top:18px">Tell us what you're hiring for.</h2>
+    <p class="lede">We will tell you within 48 hours whether we believe we can deliver, what a realistic timeline looks like, and what it would cost. No retainer commitment until we both agree it is the right fit.</p>
+    <div class="cta-final-ctas">
+      <a href="#" class="btn btn-primary btn-arrow" id="calendlyMain">Book a discovery call <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <a href="mailto:felix@goldenpipitrecruiting.com" class="btn btn-secondary">Email Felix directly</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <div class="logo-mark">G</div>
+          <div class="foot-brand-text">Golden Pipit Recruiting</div>
+        </div>
+        <div style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 22px; color: var(--gold); letter-spacing: -0.005em; margin: -8px 0 16px;">Everything People<span style="color: var(--champagne);">.</span></div>
+        <p class="foot-tag">Retained executive search for senior roles in finance, consulting, and growth-stage operations. Delaware-incorporated. Nairobi-based. Globally engaged.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Practice</h5>
+        <ul>
+          <li><a href="#track-record">Track record</a></li>
+          <li><a href="#how">How we work</a></li>
+          <li><a href="#what-we-do">What we do</a></li>
+          <li><a href="#portal">Client portal</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Group</h5>
+        <ul>
+          <li><a href="https://goldenpipitcareers.com" target="_blank" rel="noopener">GP Careers</a></li>
+          <li><a href="#" target="_blank" rel="noopener">GP Fractional</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:felix@goldenpipitrecruiting.com">felix@goldenpipitrecruiting.com</a></li>
+          <li><a href="#contact">Book a call</a></li>
+          <li style="color: rgba(255,255,255,0.45);">View Park Towers, Suite 1<br/>Utalii Street, Nairobi</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Golden Pipit Recruiting. A Golden Pipit Group practice.</span>
+      <span>Delaware-incorporated · USD invoicing · References on request</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Close mobile nav on link click
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
